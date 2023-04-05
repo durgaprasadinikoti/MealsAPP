@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
         
    },
    text: {
-        fontSize: deviceWidth < 400 ? 20 : 42,
+        fontSize: 42,
         fontFamily: 'customFont',
         color: COLOLRS.lightBlack
    }
