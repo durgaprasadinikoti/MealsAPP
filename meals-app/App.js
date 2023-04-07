@@ -4,6 +4,7 @@ import HomePage from "./screens/HomePage";
 import {  NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import CategoryList from "./screens/CategoryList";
+import MealDetails from './screens/MealDetails';
 
 const Stack = createStackNavigator();
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
           <Stack.Navigator screenOptions={{headerShown: false}}>
               <Stack.Screen name="Home" component={HomePage} />
               <Stack.Screen name="CategoryList" component={CategoryList} />
+              <Stack.Screen name="MealDetails" component={MealDetails} />
           </Stack.Navigator>
         </NavigationContainer>
     );

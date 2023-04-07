@@ -11,7 +11,7 @@ import {
 
   const AnimatedText = Animated.createAnimatedComponent(Text);
 
-const MealsCategoryItemList = ({categoryName}) => {
+const MealsCategoryItemList = ({categoryName, navigation}) => {
     const [isDataLoaded, setIsDataLoaded] = useState(false);
     const [categories, setCategories] = useState([]);
     const [fadeAnim] = useState(new Animated.Value(0));
@@ -51,7 +51,7 @@ const MealsCategoryItemList = ({categoryName}) => {
         {isDataLoaded && (
           <FlatList
             data={categories.meals}
-            renderItem={({ item }) => <MealsCategorySubItem item={item} />}
+            renderItem={({ item }) => <MealsCategorySubItem item={item} navigation={navigation} />}
             keyExtractor={(item) => item.idMeal}
           />
         )}

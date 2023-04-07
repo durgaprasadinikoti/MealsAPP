@@ -11,7 +11,7 @@ import {
   import { useState, useEffect } from "react";
   
 
-const MealsCategorySubItem = ({item}) => {
+const MealsCategorySubItem = ({item, navigation}) => {
 
     const [animationValue] = useState(new Animated.Value(0));
     const { strMeal, strMealThumb, idMeal} = item;
@@ -28,6 +28,10 @@ const MealsCategorySubItem = ({item}) => {
         inputRange: [0, 1],
         outputRange: [-500, 0],
       });
+
+      const navigateToMealDetails = () => {
+        navigation.navigate('MealDetails', {idMeal})
+      }
     
 
      return (
@@ -35,9 +39,10 @@ const MealsCategorySubItem = ({item}) => {
         <Card>
           <TouchableOpacity
             style={styles.conatiner}
+            onPress={navigateToMealDetails}
           >
             <Animated.View style={[{ transform: [{ translateX }] }, styles.itemContainer]}>
-              <Image source={{ uri: strMealThumb }} style={styles.image} resizeMode="contain" />
+              <Image source={{ uri: strMealThumb }} style={styles.image}  />
               <Text style={styles.text}>{strMeal}</Text>
             </Animated.View>
           </TouchableOpacity>
@@ -59,27 +64,15 @@ const styles = StyleSheet.create({
     text: {
       color: COLOLRS.white,
       fontFamily: "customFont",
-      fontSize: 20,
-      padding: 10,
-      margin: 20
+      fontSize: 18,
+      margin: 10
     },
-  
-    showMoreText: {
-      color: COLOLRS.lightWhite,
-      fontSize: 12,
-      padding: 6,
-    },
-  
-    descriptionText: {
-      color: COLOLRS.lightWhite,
-      fontSize: 12,
-      padding: 10,
-    },
+
     image: {
       margin: 20,
-      width: '90%',
-      height: 100,
-      resizeMode: "contain",
+      width: '100%',
+      height: 150,
+      borderRadius: 15
     },
   });
 

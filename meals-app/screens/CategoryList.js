@@ -41,7 +41,7 @@ const CategoryList = ({ route, navigation }) => {
           </SafeAreaView>
         </SafeAreaView>
         <SafeAreaView style={{ flex: 1 }}>
-          <MealsCategoryItemList categoryName={categoryName} />
+          <MealsCategoryItemList categoryName={categoryName} navigation={navigation} />
         </SafeAreaView>
       </SafeAreaView>
     </Layout>
