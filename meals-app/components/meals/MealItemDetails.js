@@ -13,6 +13,8 @@ const MealItemDetails = ({ idMeal, navigation }) => {
     fecthMealDetails();
   }, []);
 
+  // fecth App meals Items
+
   const fecthMealDetails = async () => {
     const response = await fetch(
       `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`
